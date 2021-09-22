@@ -1,0 +1,316 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Header */
+
+.header-container, .team-title-and-text { /* team container added */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "h1-title"
+    "title-subtext";
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.h1-title {
+    grid-area: h1-title;
+    font-size: 50px;
+    font-weight: 100;
+}
+
+.title-subtext {
+    grid-area: title-subtext;
+}
+
+.navbar {
+    max-width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-and-name, .subnavbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+}
+
+.logo-and-name > *, .subnavbar > * {
+    padding: 0 10px;
+    width: max-content;
+
+}
+
+.subnavbar > * {
+    text-decoration: none;
+    color: black;
+}
+
+.subnavbar > *:hover {
+    font-weight: bold;
+}
+ 
+.logo {
+    width: 8%;
+}
+
+/* room section */
+
+.room-container {
+    display: flex;
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+    padding: 25px 0;
+}
+
+.roomcard {
+    /* border: 1px solid black; */
+    margin: 0 10px;
+}
+
+.card-image {
+    width:  100%;
+    height: 150px;
+}
+
+.cardtitle {
+    padding: 10px 0;
+    text-align: left;
+    font-weight: bold;
+    font-size: larger;
+    color: #6b6b6b;
+    text-transform: capitalize;
+}
+
+.cardtext {
+    color: #999;
+    text-align: left;
+}
+
+/* team section */
+
+/* team container added to head container for reused code */
+.team-title-and-text {
+    max-width: 500px;
+}
+
+.subtitle {
+    font-size:xx-large;
+    color: #6b6b6b;
+    padding: 25px 0 10px 0;
+}
+
+.subtext {
+    color: #999;
+}
+
+/* team members flexbox */
+.member-image {
+    width: 100%;
+}
+
+.social-media-icon {
+    width: 10%;
+}
+
+.social-media-icon-2 {
+    width: 15%;
+}
+
+.team-icons-container {
+    display: flex;
+    max-width: 900px;
+    margin: auto;
+    justify-content: space-around;
+    padding-bottom: 50px;
+}
+
+.arrow {
+    width: 10px;
+}
+
+.teammember {
+    flex: 1;
+    margin: 0 50px;
+}
+
+/* footer section */
+
+footer {
+    background-color: #282828;
+    color: #777;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 100px;
+    grid-template-areas: 
+    "footer-social-icons"
+    "contact-information"
+    "copyright-info";
+}
+
+.footer-social-icons {
+    grid-area: footer-social-icons;
+    display: grid;
+    grid-template-columns: repeat(4, 120px);
+    grid-template-areas: 
+    "facebook twitter instagram linkedin";
+    justify-content: center;
+    align-content: center;
+    margin: -20px 0 0 0;
+    text-transform: uppercase;
+}
+
+.facebook {
+    grid-area: facebook;
+}
+
+.twitter {
+    grid-area: twitter;
+}
+
+.instagram {
+    grid-area: instagram;
+}
+
+.linkedin {
+    grid-area: linkedin;
+}
+
+.contact-information {
+    grid-area: contact-information;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    padding-bottom: 100px;
+}
+
+.address {
+    padding: 0 25px;
+}
+
+.company-address-title, .email-title, .phone-number-title {
+    padding-bottom: 10px;
+    color: white;
+}
+
+hr {
+    border-color: white;
+}
+
+.email {
+    padding: 0 25px;
+    line-height: 25px;
+}
+
+.phone-number {
+    padding: 0 25px;
+}
+
+.copyright-info {
+    grid-area: copyright-info;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+hr {
+    width: 100%;
+    border-color: #777;
+}
+
+@media (max-width: 768px) {
+
+    .subnavbar > * {
+        padding: 5px;
+    }
+
+    .room-container {
+        margin: 0 10px;
+    }
+
+    .roomcard {
+        margin: 0 10px;
+    }
+
+    .arrow {
+        display: none;
+    }
+
+    .team-icons-container {
+        max-width: 700px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .contact-information {
+        flex-direction: column;
+        padding-bottom: 0;
+        margin-top: -50px;
+    }
+
+    .contact-information, .email, .phone-number {
+        padding-bottom: 25px;
+    }
+
+    .social-media-icon {
+        width: 15%;
+    }
+}
+
+@media (max-width: 425px) {
+
+    .room-container {
+        flex-direction: column;
+        margin: 0 20px;
+    }
+
+    .roomcard {
+        margin: 10px 10px;
+    }
+
+    .team-icons-container {
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+        padding-bottom: 50px;
+    }
+
+    .teammember {
+        padding-bottom: 20px;
+    }
+
+    .arrow {
+        display: none;
+    }
+
+    footer {
+        grid-template-rows: 250px 300px 75px;
+    }
+
+
+    .footer-social-icons {
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "facebook twitter"
+        "instagram linkedin";
+        margin: 10px;
+        text-align: center;
+    }
+
+    .contact-information {
+        flex-direction: column;
+        padding-bottom: 0;
+        margin-top: -50px;
+    }
+}
